@@ -9,7 +9,7 @@
 ##二级标题
 ###无序列表1
 2*3
-###有序列表1.2.3.
+###有序列表1.a2.b3.c
 ###这里是引用
 
 注意符号和文本间的空格
@@ -18,7 +18,7 @@
 ####图片：图片地址可以使本地图片路径，或者图片网址插入图片
 ####网址：插入链接baidu
 ###粗体与斜体粗体：用两个包含一段文本就是粗体。    例：粗体斜体：用一个包含一段文本就是斜体
-###代码框只需要用两个 把中间的代码包含起来,例如：im">
+###代码框只需要用两个 ` 把中间的代码包含起来,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="myFirst">
 <meta property="og:url" content="http://yoursite.com/2017/03/24/myFirst/index.html">
@@ -27,7 +27,7 @@
 ##二级标题
 ###无序列表1
 2*3
-###有序列表1.2.3.
+###有序列表1.a2.b3.c
 ###这里是引用
 
 注意符号和文本间的空格
@@ -36,17 +36,17 @@
 ####图片：图片地址可以使本地图片路径，或者图片网址插入图片
 ####网址：插入链接baidu
 ###粗体与斜体粗体：用两个包含一段文本就是粗体。    例：粗体斜体：用一个包含一段文本就是斜体
-###代码框只需要用两个 把中间的代码包含起来,例如：im">
+###代码框只需要用两个 ` 把中间的代码包含起来,">
 <meta property="og:image" content="http://yoursite.com/图片地址">
 <meta property="og:image" content="http://yoursite.com/home/liyan/Desktop/test.jpg">
-<meta property="og:updated_time" content="2017-03-24T04:01:43.477Z">
+<meta property="og:updated_time" content="2017-03-24T08:38:11.247Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="myFirst">
 <meta name="twitter:description" content="#一级标题
 ##二级标题
 ###无序列表1
 2*3
-###有序列表1.2.3.
+###有序列表1.a2.b3.c
 ###这里是引用
 
 注意符号和文本间的空格
@@ -55,7 +55,7 @@
 ####图片：图片地址可以使本地图片路径，或者图片网址插入图片
 ####网址：插入链接baidu
 ###粗体与斜体粗体：用两个包含一段文本就是粗体。    例：粗体斜体：用一个包含一段文本就是斜体
-###代码框只需要用两个 把中间的代码包含起来,例如：im">
+###代码框只需要用两个 ` 把中间的代码包含起来,">
 <meta name="twitter:image" content="http://yoursite.com/图片地址">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -94,9 +94,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -131,7 +131,7 @@
 <p>##二级标题</p>
 <p>###无序列表<br><em>1
 </em>2<br>*3</p>
-<p>###有序列表<br>1.<br>2.<br>3.</p>
+<p>###有序列表<br>1.a<br>2.b<br>3.c</p>
 <p>###这里是引用</p>
 <blockquote>
 <p>注意符号和文本间的空格</p>
@@ -140,11 +140,11 @@
 <p>####图片：<img src="图片地址" alt="">图片地址可以使本地图片路径，或者图片网址<br>插入图片<br><img src="/home/liyan/Desktop/test.jpg" alt="test"></p>
 <p>####网址：<a href=""></a><br>插入链接<br><a href="https://www.baidu.com" target="_blank" rel="external">baidu</a></p>
 <p>###粗体与斜体<br>粗体：用两个<em>包含一段文本就是粗体。    例：<strong>粗体</strong><br>斜体：用一个</em>包含一段文本就是斜体</p>
-<p>###代码框<br>只需要用两个 <code>把中间的代码包含起来,例如：</code><br>import os</p>
+<p>###代码框<br>只需要用两个 ` 把中间的代码包含起来,例如：<br>``<br>import os</p>
 <p>def list_all_files(path):<br>    for root, dirs, files in os.walk(path):<br>        for name in files:<br>            print os.path.join(root, name)</p>
 <pre><code>for name in dirs:
     print os.path.join(root, name)
-</code></pre><p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    path = ‘/home/liyan/Desktop/liyan/111’<br>    list_all_files(path)<br>`</p>
+</code></pre><p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    path = ‘/home/liyan/Desktop/liyan/111’<br>    list_all_files(path)<br>``</p>
 <p>###分割线<br>分割线的语法只需要加三个-号或*</p>
 <p>###表格</p>
 <p>|Tables|Are|Cool||————-|:————-:|—–:||col 3 is|right-aligned|$1600||col 2 is|centered|$12||zebra stripes|are neat|$1|</p>
@@ -152,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/24/myFirst/" data-id="cj0ncik4s0001ypqifsao85v2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/24/myFirst/" data-id="cj0nks13j0000cvqi2m6u5qc4" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -163,7 +163,7 @@
   
   
     <a href="/2017/03/24/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -196,7 +196,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -221,7 +221,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
