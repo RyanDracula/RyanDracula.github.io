@@ -3,57 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>myFirst | Hexo</title>
+  <title>python中的多进程与多线程 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##二级标题
-###无序列表1
-2*3
-###有序列表1.a2.b3.c
-###这里是引用
-
-注意符号和文本间的空格
-
-###图片与链接
-####图片：图片地址可以使本地图片路径，或者图片网址插入图片
-####网址：插入链接baidu
-###粗体与斜体粗体：用两个包含一段文本就是粗体。    例：粗体斜体：用一个包含一段文本就是斜体
-###代码框只需要用3个 ` 把中间的代码包含起来,标注语言,例">
+  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+多进程例子">
 <meta property="og:type" content="article">
-<meta property="og:title" content="myFirst">
+<meta property="og:title" content="python中的多进程与多线程">
 <meta property="og:url" content="http://yoursite.com/2017/03/24/myFirst/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="##二级标题
-###无序列表1
-2*3
-###有序列表1.a2.b3.c
-###这里是引用
-
-注意符号和文本间的空格
-
-###图片与链接
-####图片：图片地址可以使本地图片路径，或者图片网址插入图片
-####网址：插入链接baidu
-###粗体与斜体粗体：用两个包含一段文本就是粗体。    例：粗体斜体：用一个包含一段文本就是斜体
-###代码框只需要用3个 ` 把中间的代码包含起来,标注语言,例">
-<meta property="og:image" content="http://yoursite.com/图片地址">
-<meta property="og:image" content="http://yoursite.com/home/liyan/Desktop/test.jpg">
-<meta property="og:updated_time" content="2017-03-24T08:46:05.040Z">
+<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+多进程例子">
+<meta property="og:updated_time" content="2017-03-24T09:28:39.133Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="myFirst">
-<meta name="twitter:description" content="##二级标题
-###无序列表1
-2*3
-###有序列表1.a2.b3.c
-###这里是引用
-
-注意符号和文本间的空格
-
-###图片与链接
-####图片：图片地址可以使本地图片路径，或者图片网址插入图片
-####网址：插入链接baidu
-###粗体与斜体粗体：用两个包含一段文本就是粗体。    例：粗体斜体：用一个包含一段文本就是斜体
-###代码框只需要用3个 ` 把中间的代码包含起来,标注语言,例">
-<meta name="twitter:image" content="http://yoursite.com/图片地址">
+<meta name="twitter:title" content="python中的多进程与多线程">
+<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+多进程例子">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -93,7 +57,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -105,7 +69,7 @@
         <section id="main"><article id="post-myFirst" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/03/24/myFirst/" class="article-date">
-  <time datetime="2017-03-24T03:33:54.000Z" itemprop="datePublished">2017-03-24</time>
+  <time datetime="2017-03-24T09:28:39.137Z" itemprop="datePublished">2017-03-24</time>
 </a>
     
   </div>
@@ -116,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      myFirst
+      python中的多进程与多线程
     </h1>
   
 
@@ -124,25 +88,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##二级标题</p>
-<p>###无序列表<br><em>1
-</em>2<br>*3</p>
-<p>###有序列表<br>1.a<br>2.b<br>3.c</p>
-<p>###这里是引用</p>
-<blockquote>
-<p>注意符号和文本间的空格</p>
-</blockquote>
-<p>###图片与链接</p>
-<p>####图片：<img src="图片地址" alt="">图片地址可以使本地图片路径，或者图片网址<br>插入图片<br><img src="/home/liyan/Desktop/test.jpg" alt="test"></p>
-<p>####网址：<a href=""></a><br>插入链接<br><a href="https://www.baidu.com" target="_blank" rel="external">baidu</a></p>
-<p>###粗体与斜体<br>粗体：用两个<em>包含一段文本就是粗体。    例：<strong>粗体</strong><br>斜体：用一个</em>包含一段文本就是斜体</p>
-<p>###代码框<br>只需要用3个 ` 把中间的代码包含起来,标注语言,例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">list_all_files</span><span class="params">(path)</span>:</span></div><div class="line">	<span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(path):</div><div class="line">		<span class="keyword">for</span> name <span class="keyword">in</span> files:</div><div class="line">			<span class="keyword">print</span> os.path.join(root, name)</div><div class="line"></div><div class="line">		<span class="keyword">for</span> name <span class="keyword">in</span> dirs:</div><div class="line">			<span class="keyword">print</span> os.path.join(root, name)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">	path = <span class="string">'/home/liyan/Desktop/liyan/111'</span></div><div class="line">	list_all_files(path)</div></pre></td></tr></table></figure></p>
-<p>###分割线</p>
-<h2 id="分割线的语法只需要加三个-号或"><a href="#分割线的语法只需要加三个-号或" class="headerlink" title="分割线的语法只需要加三个-号或*"></a>分割线的语法只需要加三个-号或*</h2>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="多进程"><a href="#多进程" class="headerlink" title="多进程"></a>多进程</h2><h3 id="例子一：使用fork创建进程（fork是类unix系统下创建进程的方式）"><a href="#例子一：使用fork创建进程（fork是类unix系统下创建进程的方式）" class="headerlink" title="例子一：使用fork创建进程（fork是类unix系统下创建进程的方式）"></a>例子一：使用fork创建进程（fork是类unix系统下创建进程的方式）</h3><p><em>os.fork()执行后，创建一个子进程，之后子进程与父进程继续执行
+</em>fork()函数有返回值。父进程返回值大于0（是子进程的PID），子进程返回的值为0。<br>*父进程执行完毕后退出，不等待子进程; 主进程退出后，不影响子进程的运行状态</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> time</div><div class="line"></div><div class="line">ret = os.fork()</div><div class="line"><span class="keyword">print</span> <span class="string">'if/else两个代码块分别在两个进程中执行'</span></div><div class="line"><span class="keyword">if</span> ret:</div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        <span class="keyword">print</span> <span class="string">'这是父进程,其子进程的ID是:%d'</span> % ret</div><div class="line">	time.sleep(<span class="number">1</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">	<span class="keyword">print</span> <span class="string">'这是子进程，我自己的PID是:%d,其父进程的ID是:%d'</span> % (os.getpid(),os.getppid())</div><div class="line">	time.sleep(<span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">'---over---'</span></div></pre></td></tr></table></figure>
+<h3 id="例子二：使用Process创建进程"><a href="#例子二：使用Process创建进程" class="headerlink" title="例子二：使用Process创建进程"></a>例子二：使用Process创建进程</h3><p><em>创建进程的类：Process([group [, target [, name [, args [, kwargs]]]]])，target表示调用对象，args表示调用对象的位置参数元组。kwargs表示调用对象的字典。name为别名。group实质上不使用。
+</em>方法：is_alive()、join([timeout])、run()、start()、terminate()。其中，Process以start()启动某个进程。<br>*属性：authkey、daemon（要通过start()设置）、exitcode(进程在运行时为None、如果为–N，表示被信号N结束）、name、pid。其中daemon是父进程终止后自动终止，且自己不能产生新进程，必须在start()之前设置。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(name,**kwargs)</span>:</span></div><div class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">        <span class="keyword">print</span> <span class="string">'子进程运行中，name=%s,PID:%d'</span> % (name, os.getpid())</div><div class="line">        <span class="keyword">print</span> kwargs</div><div class="line">        time.sleep(<span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">'创建Process对象，指明target，注意args是元组形式'</span></div><div class="line">p = Process(target=test, args=(<span class="string">'test'</span>,), kwargs=&#123;<span class="string">'m'</span>:<span class="number">1</span>&#125;)</div><div class="line">p.start()</div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">'父进程PID:%d'</span> % os.getpid()</div><div class="line">    time.sleep(<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<h3 id="例子三：Process的一些方法"><a href="#例子三：Process的一些方法" class="headerlink" title="例子三：Process的一些方法"></a>例子三：Process的一些方法</h3><p>使用Process创建多进程时需注意两点：<br><em>父进程与子进程执行的顺序不确定，要看操作系统调度。
+</em>多进程相当于同一个程序运行了多次，进程间资源不共用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">worker1</span><span class="params">(time1)</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'子进程1执行，PID是:%d'</span> % os.getpid()</div><div class="line">    time.sleep(time1)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">worker2</span><span class="params">(time2)</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'子进程1执行，PID是:%d'</span> % os.getpid()</div><div class="line">    time.sleep(time2)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    <span class="keyword">print</span> os.getpid()</div><div class="line">    <span class="comment">#两个进程，分别执行两个函数</span></div><div class="line">    p1 = Process(target=worker1, args=(<span class="number">1</span>,))</div><div class="line">    <span class="comment">##如果不指定name参数,默认的进程对象名称为Process-N,N为一个递增的整数</span></div><div class="line">    p2 = Process(target=worker2, name=<span class="string">'worker2'</span>, args=(<span class="number">2</span>,))</div><div class="line">    p1.start()</div><div class="line">    p2.start()</div><div class="line">    <span class="comment">#p1是否还存活？</span></div><div class="line">    <span class="keyword">print</span> <span class="string">"p1.is_alive=%s"</span> % p1.is_alive()</div><div class="line">    p2.join()</div><div class="line">    <span class="comment">#p2是否还存活？</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'p2.is_alive=%s'</span> % p2.is_alive()</div><div class="line"></div><div class="line"><span class="string">"""</span></div><div class="line">结果：</div><div class="line">25455</div><div class="line">p1.is_alive=True</div><div class="line">子进程1执行，PID是:25456</div><div class="line">子进程1执行，PID是:25457</div><div class="line">p2.is_alive=False</div><div class="line">"""</div></pre></td></tr></table></figure>
+<h3 id="重写Process类的run-方法"><a href="#重写Process类的run-方法" class="headerlink" title="重写Process类的run()方法"></a>重写Process类的run()方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</div><div class="line"><span class="keyword">import</span> time</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">'继承Process类'</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyNewProcess</span><span class="params">(Process)</span>:</span></div><div class="line">    <span class="comment">#重写run()方法</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></div><div class="line">        start_time = time.time()</div><div class="line">        <span class="keyword">print</span> <span class="string">'___1___'</span></div><div class="line">        time.sleep(<span class="number">1</span>)</div><div class="line">        end_time = time.time()</div><div class="line">        <span class="keyword">print</span> end_time - start_time</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    <span class="comment">#创建Process对象</span></div><div class="line">    p = MyNewProcess()</div><div class="line">    <span class="comment">#调用start()方法时，默认调用run()方法。即使用父类接口调用子类方法。</span></div><div class="line">    p.start()</div><div class="line">    <span class="comment">#等待子进程结束，再退出父进程</span></div><div class="line">    p.join()</div></pre></td></tr></table></figure>
+<p>More info: <a href="http://www.cnblogs.com/kaituorensheng/p/4445418.html" target="_blank" rel="external">借鉴</a></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/24/myFirst/" data-id="cj0nl199x0001jdqim8k8fmzr" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2017/03/24/myFirst/" data-id="cj0nmkgka00015cqiazco6g07" class="article-share-link">Share</a>
       
       
     </footer>
@@ -153,7 +115,7 @@
   
   
     <a href="/2017/03/24/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ouder</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -176,7 +138,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
     </div>
@@ -186,12 +148,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/03/24/myFirst/">myFirst</a>
+            <a href="/2017/03/24/myFirst/">python中的多进程与多线程</a>
           </li>
         
           <li>
