@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python中的encode与decode | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Welcome to correct.
+python2中的字符序列类型
+python2中有两种字符序列类型，分别是str和unicode
+str的实例包含原始的8位值; 而unicode的实例，则包含unicode的字符
+
+将unicode的数据表示为二进制数据(也就是原始八位值)，就必须使用encode(); 反之使用decode()，最常见的编码是utf-8。123456789a = &apos;123">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python中的encode与decode">
+<meta property="og:url" content="http://yoursite.com/2017/03/27/encode-decode/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Welcome to correct.
+python2中的字符序列类型
+python2中有两种字符序列类型，分别是str和unicode
+str的实例包含原始的8位值; 而unicode的实例，则包含unicode的字符
+
+将unicode的数据表示为二进制数据(也就是原始八位值)，就必须使用encode(); 反之使用decode()，最常见的编码是utf-8。123456789a = &apos;123">
+<meta property="og:updated_time" content="2017-03-27T11:10:24.779Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python中的encode与decode">
+<meta name="twitter:description" content="Welcome to correct.
+python2中的字符序列类型
+python2中有两种字符序列类型，分别是str和unicode
+str的实例包含原始的8位值; 而unicode的实例，则包含unicode的字符
+
+将unicode的数据表示为二进制数据(也就是原始八位值)，就必须使用encode(); 反之使用decode()，最常见的编码是utf-8。123456789a = &apos;123">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-encode-decode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/27/encode-decode/" class="article-date">
+  <time datetime="2017-03-27T10:25:39.000Z" itemprop="datePublished">2017-03-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python中的encode与decode
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to correct.</p>
+<h2 id="python2中的字符序列类型"><a href="#python2中的字符序列类型" class="headerlink" title="python2中的字符序列类型"></a>python2中的字符序列类型</h2><ul>
+<li>python2中有两种字符序列类型，分别是str和unicode</li>
+<li>str的实例包含原始的8位值; 而unicode的实例，则包含unicode的字符</li>
+</ul>
+<p>将unicode的数据表示为二进制数据(也就是原始八位值)，就必须使用encode(); 反之使用decode()，最常见的编码是utf-8。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">a = <span class="string">'12345'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(a)</div><div class="line">&lt;type <span class="string">'str'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = a.decode(<span class="string">'utf-8'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(a)</div><div class="line">&lt;type <span class="string">'unicode'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = a.encode(<span class="string">'utf-8'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(a)</div><div class="line">&lt;type <span class="string">'str'</span>&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="python3中的字符序列类型"><a href="#python3中的字符序列类型" class="headerlink" title="python3中的字符序列类型"></a>python3中的字符序列类型</h2><ul>
+<li>python3中有两种字符序列类型，分别是str和unicode</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/27/encode-decode/" data-id="cj0s8tl930004ijqi0rhwo23x" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/27/udp-socket/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          udp_socket
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/27/tcp-socket/">python中的tcp_socket</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/27/myFirst/">Python中的多进程和多线程</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/27/udp-socket/">udp_socket</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/27/encode-decode/">python中的encode与decode</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>udp_socket | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="简介udp是无连接的，且不对数据包进行ACK确认，没有重传机制(不稳定)，只做尽力而为的交付，也正因如此，UDP传输速度相对较快。网络中传输的是UDP数据报。udp类比于写信，每封需指定地址，且无需建立连接，直接通信，但不确保对方是否收到。udp一般用于实时传输(注重速度)，如语音广播/视频/TFTP/DNS。
+创建UDP客户端和服务器端的流程图片
+UDP的数据包——wireshark抓包结果图片">
+<meta property="og:type" content="article">
+<meta property="og:title" content="udp_socket">
+<meta property="og:url" content="http://yoursite.com/2017/03/27/udp-socket/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="简介udp是无连接的，且不对数据包进行ACK确认，没有重传机制(不稳定)，只做尽力而为的交付，也正因如此，UDP传输速度相对较快。网络中传输的是UDP数据报。udp类比于写信，每封需指定地址，且无需建立连接，直接通信，但不确保对方是否收到。udp一般用于实时传输(注重速度)，如语音广播/视频/TFTP/DNS。
+创建UDP客户端和服务器端的流程图片
+UDP的数据包——wireshark抓包结果图片">
+<meta property="og:updated_time" content="2017-03-27T15:02:23.142Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="udp_socket">
+<meta name="twitter:description" content="简介udp是无连接的，且不对数据包进行ACK确认，没有重传机制(不稳定)，只做尽力而为的交付，也正因如此，UDP传输速度相对较快。网络中传输的是UDP数据报。udp类比于写信，每封需指定地址，且无需建立连接，直接通信，但不确保对方是否收到。udp一般用于实时传输(注重速度)，如语音广播/视频/TFTP/DNS。
+创建UDP客户端和服务器端的流程图片
+UDP的数据包——wireshark抓包结果图片">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-udp-socket" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/27/udp-socket/" class="article-date">
+  <time datetime="2017-03-27T11:14:37.000Z" itemprop="datePublished">2017-03-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      udp_socket
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>udp是无连接的，且不对数据包进行ACK确认，没有重传机制(不稳定)，只做尽力而为的交付，也正因如此，UDP传输速度相对较快。网络中传输的是UDP数据报。<br>udp类比于写信，每封需指定地址，且无需建立连接，直接通信，但不确保对方是否收到。<br>udp一般用于实时传输(注重速度)，如语音广播/视频/TFTP/DNS。</p>
+<h4 id="创建UDP客户端和服务器端的流程"><a href="#创建UDP客户端和服务器端的流程" class="headerlink" title="创建UDP客户端和服务器端的流程"></a>创建UDP客户端和服务器端的流程</h4><p>图片</p>
+<h4 id="UDP的数据包——wireshark抓包结果"><a href="#UDP的数据包——wireshark抓包结果" class="headerlink" title="UDP的数据包——wireshark抓包结果"></a>UDP的数据包——wireshark抓包结果</h4><p>图片（如果发送数据时不绑定端口，那么服务器会随机分配一个动态端口）</p>
+<blockquote>
+<p>什么是动态端口？<br>0-1023号端口是知名端口，即已被知名协议占用，1024-65535这些未被分配的端口即称为动态端口</p>
+<h3 id="创建UDP服务器"><a href="#创建UDP服务器" class="headerlink" title="创建UDP服务器"></a>创建UDP服务器</h3><h4 id="例子一：发数据"><a href="#例子一：发数据" class="headerlink" title="例子一：发数据"></a>例子一：发数据</h4></blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</div><div class="line"> <span class="comment">#中文用encode('gb2312')编码</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">sendToFQ</span><span class="params">()</span>:</span></div><div class="line">    ADDR = (<span class="string">"192.168.119.68"</span>,<span class="number">8080</span>)</div><div class="line">    <span class="comment">#创建UDP套接字</span></div><div class="line">    udpSocket = socket(AF_INET,SOCK_DGRAM)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">	<span class="comment">#使用UDP发送数据，必须要写上IP和Port(UDP特性是无连接的，所以每次发送数据都必须写上对方的IP和port)</span></div><div class="line">        udpSocket.sendto(<span class="string">"haha"</span>, ADDR)</div><div class="line">    <span class="comment">#关闭套接字</span></div><div class="line">    udpSocket.close()</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    sendToFQ()</div></pre></td></tr></table></figure>
+<blockquote>
+<p>UDP广播发送数据时，如何做呢？<br>答案是：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">#地址设置为广播</span></div><div class="line">ADDR = (<span class="string">'&lt;broadcast&gt;'</span>,<span class="number">8080</span>)</div><div class="line"> <span class="comment">#修改套接字设置</span></div><div class="line">s.setsockopt(socket.SOL_SOCKET,	socket.SO_BROADCAST,<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<h4 id="例子二：收数据"><a href="#例子二：收数据" class="headerlink" title="例子二：收数据"></a>例子二：收数据</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</div><div class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">recvMessages</span><span class="params">()</span>:</span></div><div class="line">    udpSocket = socket(AF_INET,SOCK_DGRAM)</div><div class="line">    <span class="comment">#绑定的目的是为了有明确的接收地址与端口，如bind("",9999)——IP为空时表示本机任一IP</span></div><div class="line">    udpSocket.bind((<span class="string">"192.168.119.46"</span>,<span class="number">9999</span>))</div><div class="line">    <span class="comment">#设定每次收取最大字节是1024</span></div><div class="line">    recvData = udpSocket.recvfrom(<span class="number">1024</span>)</div><div class="line">    <span class="comment">#recvData是一个元组(data,(IP,PORT))</span></div><div class="line">    <span class="keyword">print</span> recvData</div><div class="line">    content, destInfo = recvData</div><div class="line">    <span class="comment">#使用decode()解码</span></div><div class="line">    <span class="keyword">print</span> <span class="string">'receive data : %s'</span> %s content.decode(<span class="string">'gb2312'</span>)</div><div class="line">    </div><div class="line">    udpSocket.close()</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    recvMessages()</div></pre></td></tr></table></figure>
+<blockquote>
+<p>为何收数据要绑定(IP,PORT)，而发数据不必绑定呢？<br>答：收数据时对方需知道我的IP和port才能发送数据给我，而发数据时我只需知道对方的IP和port，操作系统会为我分配端口。<br>这也就是一般服务器都绑定端口，而客户端不必绑定的原因。</p>
+</blockquote>
+<h4 id="例子四：聊天室——多线程同时收发数据"><a href="#例子四：聊天室——多线程同时收发数据" class="headerlink" title="例子四：聊天室——多线程同时收发数据"></a>例子四：聊天室——多线程同时收发数据</h4><p>网络编程常常和多线程/多进程一起使用，以达到全双工(双方可同时收发数据)的效果。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</div><div class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">sendData</span><span class="params">(udpSocket,inputIP,inputPort)</span>:</span></div><div class="line">	<span class="string">"检测键盘输入，发送数据"</span>	</div><div class="line">	<span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">		<span class="comment">#检测输入，如果没有输入则进入阻塞状态(等待I/O)</span></div><div class="line">		inputContent = raw_input(<span class="string">'\r&lt;&lt;'</span>)</div><div class="line">		<span class="comment">#发送到远端</span></div><div class="line">		udpSocket.sendto(inputContent,(inputIP,inputPort))</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">recvData</span><span class="params">(udpSocket)</span>:</span></div><div class="line">	<span class="string">"接收数据，并打印"</span></div><div class="line">	<span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">		<span class="comment">#接收数据，格式recvInfo("content",("IP","Port"))，如果没有收到数据进入阻塞状态(等待I/O)</span></div><div class="line">		recvInfo = udpSocket.recvfrom(<span class="number">1024</span>)</div><div class="line">		<span class="comment">#打印数据</span></div><div class="line">		sys.stdout.write(<span class="string">'\r&gt;&gt;%s:%s\n&lt;&lt;'</span> % (str(recvInfo[<span class="number">1</span>]),recvInfo[<span class="number">0</span>]))</div><div class="line">		sys.stdout.flush()</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">	<span class="comment">#程序第一次运行时，需要远端主机的IP和端口</span></div><div class="line">	inputIP = raw_input(<span class="string">'please input IP:'</span>)</div><div class="line">	inputPort = int(raw_input(<span class="string">'please input Port:'</span>))</div><div class="line"></div><div class="line">	<span class="comment">#创建udp的Socket对象，绑定本地IP和端口号</span></div><div class="line">	udpSocket = socket(AF_INET, SOCK_DGRAM)</div><div class="line">	udpSocket.bind((<span class="string">'192.168.119.46'</span>,<span class="number">8989</span>))</div><div class="line"></div><div class="line">	<span class="comment">#两个线程，一个用来发送数据，另一个用来接收数据，同时运行，互不干扰</span></div><div class="line">	ts = Thread(target=sendData,args=(udpSocket,inputIP,inputPort))</div><div class="line">	tr = Thread(target=recvData,args=(udpSocket,))</div><div class="line">	ts.start()</div><div class="line">	tr.start()</div><div class="line"></div><div class="line">	<span class="comment">#这里捕获异常，退出实现有问题，还需要再研究一下</span></div><div class="line">	<span class="comment"># try:</span></div><div class="line">	<span class="comment"># 	ts.join()</span></div><div class="line">	<span class="comment"># 	tr.join()</span></div><div class="line">	<span class="comment"># except:</span></div><div class="line">	<span class="comment"># 	udpSocket.close()</span></div><div class="line">	<span class="comment"># 	print '---you stopped the chat Room---'</span></div><div class="line">	<span class="comment"># 	exit()</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">	main()</div></pre></td></tr></table></figure>
+<blockquote>
+<p>开启两个线程，不停检测有没有数据要收/发，可实现全双工通信</p>
+</blockquote>
+<h4 id="例子五：使用TFTP协议下载"><a href="#例子五：使用TFTP协议下载" class="headerlink" title="例子五：使用TFTP协议下载"></a>例子五：使用TFTP协议下载</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</div><div class="line"><span class="keyword">import</span> struct</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">cs_connect</span><span class="params">(udpSocket, fileName, serverIP)</span>:</span></div><div class="line">	num = <span class="number">0</span></div><div class="line">	<span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">		<span class="comment">#从服务器接收数据</span></div><div class="line">		recvDatas = udpSocket.recvfrom(<span class="number">580</span>)</div><div class="line">		<span class="comment">#接收到的数据是元组，格式recvDatas(data,(ip,port)),data最多516字节，前4个字节是状态码和块编号(各占2字节)，后512字节是数据</span></div><div class="line">		content = recvDatas[<span class="number">0</span>]</div><div class="line">		content_len = len(content)</div><div class="line">		<span class="comment">#将data的前4字节，用struct.unpack()解包出来后是一个元组</span></div><div class="line">		resultTuple = struct.unpack(<span class="string">"!HH"</span>,content[:<span class="number">4</span>])</div><div class="line">		statusCode = resultTuple[<span class="number">0</span>]</div><div class="line">		blockNum = resultTuple[<span class="number">1</span>]</div><div class="line"></div><div class="line">		<span class="comment">#状态码为5,证明服务器回复Error</span></div><div class="line">		<span class="keyword">if</span> statusCode == <span class="number">5</span>:</div><div class="line">			udpSocket.close()</div><div class="line">			<span class="keyword">print</span> <span class="string">"Error, server don't hava the file"</span></div><div class="line">			<span class="keyword">break</span></div><div class="line">		</div><div class="line">		<span class="keyword">elif</span> statusCode == <span class="number">3</span>:</div><div class="line">			<span class="comment">#为了避免丢包现象，使用num做校验</span></div><div class="line">			num += <span class="number">1</span></div><div class="line">			<span class="comment">#文件太大时，块编号到65535重新计数，下一个块编号是0</span></div><div class="line">			<span class="keyword">if</span> num == <span class="number">65536</span>:</div><div class="line">				num = <span class="number">0</span></div><div class="line">			<span class="keyword">if</span> num == blockNum:</div><div class="line">				<span class="comment">#以二进制形式追加到文件</span></div><div class="line">				f = open(fileName, <span class="string">'ab'</span>)</div><div class="line">				f.write(content[<span class="number">4</span>:])</div><div class="line">				num = blockNum</div><div class="line"></div><div class="line">			<span class="keyword">if</span> blockNum == <span class="number">1</span>:</div><div class="line">				<span class="comment">#TFTP协议传输某文件时，用的是随机端口</span></div><div class="line">				temPort = int(recvDatas[<span class="number">1</span>][<span class="number">1</span>])</div><div class="line">			<span class="comment">#客户端回复ACK</span></div><div class="line">			sendData = struct.pack(<span class="string">"!HH"</span>,<span class="number">4</span>, num)</div><div class="line">			udpSocket.sendto(sendData, (serverIP, temPort))</div><div class="line">			<span class="keyword">if</span> content_len &lt; <span class="number">516</span>:</div><div class="line">				<span class="comment">#UNconnect</span></div><div class="line">				f.close()</div><div class="line">				udpSocket.close()</div><div class="line">				<span class="keyword">print</span> <span class="string">'your file has been copyed!'</span></div><div class="line">				<span class="keyword">break</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">	<span class="comment">#用户输入IP，文件名</span></div><div class="line">	serverIP = raw_input(<span class="string">'Please input server IP:'</span>)</div><div class="line">	fileName = raw_input(<span class="string">'Please input filename:'</span>)</div><div class="line">	file_length = len(fileName)</div><div class="line">	sendData = struct.pack(<span class="string">"!H%dsb5sb"</span> % file_length, <span class="number">1</span>, fileName, <span class="number">0</span>, <span class="string">"octet"</span>, <span class="number">0</span>)</div><div class="line">	<span class="comment">#使用UDP套接字，TFTP基于UDP协议</span></div><div class="line">	udpSocket = socket(AF_INET, SOCK_DGRAM)</div><div class="line">	<span class="comment">#第一次发送数据到服务器</span></div><div class="line">	udpSocket.sendto(sendData, (serverIP, <span class="number">69</span>))</div><div class="line">	cs_connect(udpSocket, fileName, serverIP)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">	main()</div><div class="line"><span class="string">"""注：TFTP是知名协议，端口号固定，不需要用udpSocket.bind()绑定本地端口"""</span></div></pre></td></tr></table></figure>
+<h4 id="例子六：使用TFTP协议上传"><a href="#例子六：使用TFTP协议上传" class="headerlink" title="例子六：使用TFTP协议上传"></a>例子六：使用TFTP协议上传</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> struct</div><div class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</div><div class="line"></div><div class="line"> <span class="comment">#读文件，每次读512个字节</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_in_block</span><span class="params">(filename)</span>:</span></div><div class="line">	<span class="comment">#create generator to set data length</span></div><div class="line">	BLOCK_SIZE = <span class="number">512</span></div><div class="line">	<span class="keyword">with</span> open(filename, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</div><div class="line">		<span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">			block = f.read(BLOCK_SIZE)</div><div class="line">			<span class="keyword">if</span> block:</div><div class="line">				<span class="keyword">yield</span> block</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">	serverIP = <span class="string">'192.168.119.212'</span></div><div class="line">	filename = <span class="string">"test1.jpg"</span></div><div class="line">	<span class="comment">#构建状态码为2的数据包(即上传请求)</span></div><div class="line">	sendData = struct.pack(<span class="string">"!H%dsb5sb"</span> % len(filename), <span class="number">2</span>, filename, <span class="number">0</span>, <span class="string">"octet"</span>, <span class="number">0</span>)</div><div class="line">	udpSocket = socket(AF_INET, SOCK_DGRAM)</div><div class="line">	<span class="comment">#10秒未回复即超时</span></div><div class="line">	udpSocket.settimeout(<span class="number">10</span>)</div><div class="line">	udpSocket.sendto(sendData,(serverIP, <span class="number">69</span>))</div><div class="line">	<span class="comment">#生成器对象</span></div><div class="line">	file_content = read_in_block(filename)</div><div class="line">	myData = file_content.next()</div><div class="line"></div><div class="line">	i = <span class="number">0</span></div><div class="line">	flag = <span class="keyword">False</span></div><div class="line">	block_time = []</div><div class="line">	<span class="comment">#构建发送方数据包</span></div><div class="line">	<span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">		<span class="keyword">try</span>:</div><div class="line">			datas,ip_port = udpSocket.recvfrom(<span class="number">1024</span>)</div><div class="line">		<span class="keyword">except</span>:</div><div class="line">			<span class="keyword">print</span> <span class="string">"Error,server no response"</span></div><div class="line">			udpSocket.close()</div><div class="line">			<span class="keyword">break</span></div><div class="line">		<span class="keyword">else</span>:</div><div class="line">			<span class="comment">#服务器回复的状态码和块编号</span></div><div class="line">			statusCode, blockNum = struct.unpack(<span class="string">"!HH"</span>,datas[:<span class="number">4</span>])</div><div class="line">			<span class="keyword">if</span> blockNum == <span class="number">0</span>:</div><div class="line">				<span class="comment">#服务器使用的随机端口号</span></div><div class="line">				serverPort = ip_port[<span class="number">1</span>]</div><div class="line"></div><div class="line">			<span class="comment">#如果服务器回复ACK</span></div><div class="line">			<span class="keyword">if</span> statusCode == <span class="number">4</span>:</div><div class="line">				<span class="comment">#块编号到达65535时重新计数</span></div><div class="line">				<span class="keyword">if</span> blockNum == <span class="number">65536</span>:</div><div class="line">					blockNum = <span class="number">0</span></div><div class="line">					i = <span class="number">0</span></div><div class="line">				<span class="comment">#没有丢包发生时</span></div><div class="line">				<span class="keyword">if</span> blockNum == i:</div><div class="line">					blockNum += <span class="number">1</span></div><div class="line">					data_len = len(myData)</div><div class="line">					<span class="comment">#检测是否收到最后一个数据包的ACK</span></div><div class="line">					<span class="keyword">if</span> data_len &lt; <span class="number">512</span>:</div><div class="line">						<span class="keyword">if</span> flag:</div><div class="line">							<span class="keyword">print</span> <span class="string">'copy file successful'</span></div><div class="line">							<span class="keyword">break</span></div><div class="line">						flag = <span class="keyword">True</span></div><div class="line">					<span class="comment">#发给服务器的状态码/块编号/data</span></div><div class="line">					sendDatas = struct.pack(<span class="string">"!HH%ds"</span> % data_len, <span class="number">3</span>, blockNum, myData)</div><div class="line">					udpSocket.sendto(sendDatas,(serverIP, serverPort))</div><div class="line">					<span class="keyword">if</span> data_len == <span class="number">512</span>:</div><div class="line">						myData = file_content.next()</div><div class="line">					i += <span class="number">1</span></div><div class="line">				<span class="comment">#丢包时重传</span></div><div class="line">				<span class="keyword">else</span>:</div><div class="line">					time.sleep(<span class="number">0.5</span>)</div><div class="line">					sendDatas = struct.pack(<span class="string">"!HH%ds"</span> % data_len, <span class="number">3</span>, blockNum+<span class="number">1</span>, myData)</div><div class="line">					udpSocket.sendto(sendDatas,(serverIP, serverPort))</div><div class="line">					block_time.append(blockNum)</div><div class="line">					<span class="comment">#重传3次认为服务器不可达，退出程序</span></div><div class="line">					<span class="keyword">if</span> block_time.count(blockNum) &gt; <span class="number">3</span>:</div><div class="line">						<span class="keyword">print</span> <span class="string">"server doesn't response, transfer failed!"</span></div><div class="line">						<span class="keyword">break</span></div><div class="line">			<span class="keyword">else</span>:</div><div class="line">				<span class="keyword">break</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">	main()</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/27/udp-socket/" data-id="cj0s8tl8y0002ijqioiqbhs94" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/27/myFirst/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python中的多进程和多线程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/27/encode-decode/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python中的encode与decode</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/27/tcp-socket/">python中的tcp_socket</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/27/myFirst/">Python中的多进程和多线程</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/27/udp-socket/">udp_socket</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/27/encode-decode/">python中的encode与decode</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
